@@ -1,4 +1,4 @@
-import { Hello } from "../index";
+import { Hello } from "../testing";
 import { expect } from "chai";
 import "mocha";
 

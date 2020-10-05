@@ -158,3 +158,47 @@ Or if you want to run everthing (lint, format, test, compile and start) without 
 npm run start:dev:fix
 ```
 
+* ## Yargs
+
+I added yargs to my project using:
+```
+npm install yargs
+```
+I installed yargs types too using:
+```
+npm i @types/yargs --save-dev
+```
+
+I also setup yargs with two commands:
+* ## calc-house-materials
+- - ### Parameters:
+- - - width
+- - - length
+- - - isFeet
+- - - name
+---
+* ## get-house-materials
+- - ### Parameters:
+- - - name
+---
+
+Example on how to run calc-house-materials yargs command:
+compile:
+``` 
+tsc
+```
+Then use:
+```
+npm start -- calc-house-materials -w 8 -l 8 -n angham
+```
+---
+
+ Example on how to run get-house-materials yargs command:
+compile:
+``` 
+tsc
+```
+Then use:
+```
+npm start -- get-house-materials -n angham
+```

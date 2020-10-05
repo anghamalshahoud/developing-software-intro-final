@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node dist/index.js",
-    "compile:start": "npm run compile && npm run start",
+    "compile:start": "npm run compile && npm run start --",
     "lint:compile:start": "npm run lint && npm run compile:start",
     "lint": "eslint ./src/ --ext .ts",
     "format": "prettier --check src/**/*.ts",
@@ -26,11 +26,14 @@
     "url": "https://github.com/anghamalshahoud/developing-software-intro-final/issues"
   },
   "homepage": "https://github.com/anghamalshahoud/developing-software-intro-final#readme",
-  "dependencies": {},
+  "dependencies": {
+    "yargs": "^16.0.3"
+  },
   "devDependencies": {
     "@istanbuljs/nyc-config-typescript": "^1.0.1",
     "@types/chai": "^4.2.13",
     "@types/mocha": "^8.0.3",
+    "@types/yargs": "^15.0.7",
     "@typescript-eslint/eslint-plugin": "^4.3.0",
     "@typescript-eslint/parser": "^4.3.0",
     "chai": "^4.2.0",
