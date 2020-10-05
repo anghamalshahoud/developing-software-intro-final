@@ -1,6 +1,6 @@
 {
   "name": "acsd-final-angham",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "This respository is intended for the use of Focus College Students enrolled in the Advanced Certificate of Software Development located in Kelowna, BC and Surrey, BC.",
   "main": "index.js",
   "scripts": {
@@ -8,8 +8,8 @@
     "compile": "tsc",
     "compile:start": "npm run compile && npm run start",
     "lint": "eslint ./src/ --ext .ts",
-    "lint:compile:start":"npm run lint && npm run compile:start",
-    "lint:fix":"eslint ./src/ --ext .ts --fix ",
+    "lint:compile:start": "npm run lint && npm run compile:start",
+    "lint:fix": "eslint ./src/ --ext .ts --fix ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
