@@ -106,3 +106,22 @@ To Lint, format, compile & start run:
 ```
 npm run start:dev:fix
 ```
+## Automate Testing
+
+I add Mocha and Chai to my project using:
+```
+npm install chai mocha ts-node @types/chai @types/mocha --save-dev
+```
+ I also modified my NPM scripts so that you can, in one cli command each:
+
+- test
+- lint, format, test, compile & start
+
+To test run:
+```
+npm run test
+```
+To lint, format, test, compile and start run:
+```
+npm run start:dev:fix
+```

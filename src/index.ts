@@ -1,3 +1,4 @@
-console.log("Hello");
+export function Hello (greet:string){
+    return greet;
+}
 
-console.log("Goodby");
