@@ -5,11 +5,14 @@
   "main": "index.js",
   "scripts": {
     "start": "node dist/index.js",
-    "compile": "tsc",
     "compile:start": "npm run compile && npm run start",
-    "lint": "eslint ./src/ --ext .ts",
     "lint:compile:start": "npm run lint && npm run compile:start",
+    "lint": "eslint ./src/ --ext .ts",
+    "format": "prettier --check src/**/*.ts",
+    "start:dev:fix": "npm run lint:fix && npm run prettier:fix && npm run compile:start",
     "lint:fix": "eslint ./src/ --ext .ts --fix ",
+    "prettier:fix": "prettier --write src/**/*.ts",
+    "compile": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -27,6 +30,7 @@
     "@typescript-eslint/eslint-plugin": "^4.3.0",
     "@typescript-eslint/parser": "^4.3.0",
     "eslint": "^7.10.0",
+    "prettier": "2.1.2",
     "typescript": "^4.0.3"
   }
 }

@@ -27,7 +27,7 @@ node dist/index.js
 npm run compile:start
 ```
 
-## Automate Linting
+* ## Automate Linting
 
 I added eslint to my project using the following command:
 ```
@@ -73,4 +73,36 @@ npm run lint
 To run lint & compile & start use:
 ```
 npm run lint:compile:start
+```
+
+* ##  Automate Code Formatting 
+
+I add prettier to my project by running:
+```
+npm install --save-dev --save-exact prettier
+```
+
+I also created .prettierrc.json and inclouded the following in it:
+```javascript
+{
+    "tabWidth": 4,
+    "bracketSpacing": true
+}
+```
+And created .prettierignore file to let prettier know which files to ignore:
+```javascript
+dist
+node_modules
+```
+Finally I modified my NPM scripts so that you can, in one cli command each:
+- format
+- lint, format, compile & run
+
+To format run:
+``` 
+npm run format
+```
+To Lint, format, compile & start run:
+```
+npm run start:dev:fix
 ```
