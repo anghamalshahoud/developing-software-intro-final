@@ -7,6 +7,9 @@
     "start": "node dist/index.js",
     "compile": "tsc",
     "compile:start": "npm run compile && npm run start",
+    "lint": "eslint ./src/ --ext .ts",
+    "lint:compile:start":"npm run lint && npm run compile:start",
+    "lint:fix":"eslint ./src/ --ext .ts --fix ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,6 +24,9 @@
   "homepage": "https://github.com/anghamalshahoud/developing-software-intro-final#readme",
   "dependencies": {},
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.3.0",
+    "@typescript-eslint/parser": "^4.3.0",
+    "eslint": "^7.10.0",
     "typescript": "^4.0.3"
   }
 }
