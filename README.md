@@ -27,7 +27,7 @@ node dist/index.js
 npm run compile:start
 ```
 
-* ## Automate Linting
+* # Automate Linting
 
 I added eslint to my project using the following command:
 ```
@@ -75,7 +75,7 @@ To run lint & compile & start use:
 npm run lint:compile:start
 ```
 
-* ##  Automate Code Formatting 
+* #  Automate Code Formatting 
 
 I add prettier to my project by running:
 ```
@@ -106,7 +106,7 @@ To Lint, format, compile & start run:
 ```
 npm run start:dev:fix
 ```
-## Automate Testing
+* # Automate Testing
 
 I add Mocha and Chai to my project using:
 ```
@@ -125,3 +125,36 @@ To lint, format, test, compile and start run:
 ```
 npm run start:dev:fix
 ```
+* # Istanbul (test with coverage)
+
+I added nyc istanbul to mt project using:
+``` 
+npm i nyc --save-dev
+```
+and 
+```
+npm i @istanbuljs/nyc-config-typescript --save-dev
+```
+
+Plus I created a new file name .nycrc and included the following in it:
+```javascript
+{
+  "extends": "@istanbuljs/nyc-config-typescript",
+  "all": true,
+  "check-coverage": true
+}
+```
+
+I also modified my NPM scripts so that you can, in one cli command run
+
+- test with coverage
+
+To run test with coverage use:
+```
+npm run coverage
+```
+Or if you want to run everthing (lint, format, test, compile and start) without the coverage use:
+```
+npm run start:dev:fix
+```
+
