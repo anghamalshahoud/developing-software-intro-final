@@ -1,11 +1,11 @@
 # calcHouseMaterials (width:number,length: number,name: string, unit: boolean)
 
-This function will check if the width and length are in inches and if not it will convert the unit from feet into inches and will also return the customer name. 
-Note: The width and the length should be between 4 and 60 otherwise the program will through a RangeError. 
+This function will allows you to input the width and the length in inches and in feet if you want to. It will also return the name of the customer.
+Note: The width and the length should be between 48 and 720 otherwise the program will throw a RangeError. 
 
 # Parameters 
-- width: `number` must be between 4 - 60;
-- length: `number` must be between 4 - 60;
+- width: `number` must be between 48 - 720;
+- length: `number` must be between 48 - 720;
 - name: `string` usually it is the customer name;
 - unit: `boolean` ;
 
@@ -21,14 +21,14 @@ import {calcHouseMaterials} from '../calculator'
  console.log(houseMaterials); 
  
  // In the terminal run:
- npm start -- calc-house-materials -w 8 -l 8 -n house // if you add the -i flag it will convert the width 
- // and the length from feet into inches
+ npm start -- calc-house-materials -w 96 -l 96 -n house // if you add the -i flag it will convert the width 
+ // and the length from inches into feet
 
  // results without the -i flag: 
- { housewidth: 8, houselength: 8, name: 'house' }
+ { housewidth: 96, houselength: 96, name: 'house' }
 
  // results with the -i flag:
- { housewidth: 96, houselength: 96, name: 'house' }
+ { housewidth: 8, houselength: 8, name: 'house' }
 ```
 
 - ## Example 2
@@ -43,14 +43,14 @@ import {calcHouseMaterials} from '../calculator'
  
      // In the terminal run:
 
- npm start -- calc-house-materials -w 2 -l 8 -n house   
-     // if you add the -i flag it will convert the width and the length from feet into inches
+ npm start -- calc-house-materials -w 24 -l 96 -n house   
+     // if you add the -i flag it will convert the width and the length from inches into feet
 
      // results without the -i flag: 
-      RangeError: Numbers passed in must be between 4 and 60
+      RangeError: Numbers passed in must be between 48 and 720
 
      // results with the -i flag:
-     RangeError: Numbers passed in must be between 4 and 60
+     RangeError: Numbers passed in must be between 48 and 720
 ```
 
 
@@ -64,4 +64,24 @@ import {calcHouseMaterials} from '../calculator'
   houselength: number,
    name: string
    }
+```
+# getHouseMaterials (string)
+ This function will be used to call an existing house 
+
+ # Parameters
+ name: `string`;
+
+ # Usage: 
+```javascript
+// copy and past the following into > src/commands/getMaterials
+
+import {getHouseMaterials} from '../calculator/index';
+
+const getCustomer = getHouseMaterials(args.name)
+ console.log(getCustomer);
+// in the terminal run:
+ 
+npm start -- get-house-materials -n angham
+// results:
+{ name: 'angham' }
 ```

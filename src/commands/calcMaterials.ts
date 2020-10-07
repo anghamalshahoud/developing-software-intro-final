@@ -30,7 +30,7 @@ export function calcMaterials(yargs: Argv): void {
                 isFeet: {
 
                     type: 'boolean',
-                    alias: 'i',
+                    alias: 'f',
                     description: 'are the length and width in feet? or inchs?'
                 },
                 name: {
@@ -46,9 +46,9 @@ export function calcMaterials(yargs: Argv): void {
 
 
         function (args) {
-            if (args.width < 4 || args.length < 4 || args.width > 60 || args.length > 60)
+            if (args.width < 48 || args.length < 48 || args.width > 720 || args.length > 720)
 
-                throw new RangeError('Numbers passed in must be between 4 and 60');
+                throw new RangeError('Numbers passed in must be between 48 and 720');
 
             const houseMaterials = calcHouseMaterials(args.width, args.length, args.name, args.isFeet)
 
