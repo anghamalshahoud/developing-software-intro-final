@@ -1,57 +1,61 @@
 import yargs = require('yargs');
 import { Arguments, Argv, string } from "yargs";
+import { calcHouseMaterials } from '../calculator'
 
 
 
-export function calcHouseMaterials(yargs: Argv): void{
-yargs.command(
+export function calcMaterials(yargs: Argv): void {
+    yargs.command(
 
-    "calc-house-materials",
+        "calc-house-materials",
 
-    "To claculte the house materials needed",
+        "To claculte the house materials needed",
 
-    function (yargs) {
+        function (yargs) {
 
-        return yargs.options({
+            return yargs.options({
 
-            width: {
+                width: {
 
-                type: 'number',
-                alias: 'l',
-                description: 'the length of the house'
-            },
-            length: {
+                    type: 'number',
+                    alias: 'w',
+                    description: 'the length of the house'
+                },
+                length: {
 
-                type: 'number',
-                alias: 'w',
-                description: 'the width of the house'
-            },
-            isFeet: {
+                    type: 'number',
+                    alias: 'l',
+                    description: 'the width of the house'
+                },
+                isFeet: {
 
-                type: 'boolean',
-                alias: 'i',
-                description: 'are the length and width in feet? or inchs?'
-            },
-            name: {
+                    type: 'boolean',
+                    alias: 'i',
+                    description: 'are the length and width in feet? or inchs?'
+                },
+                name: {
 
-                type: 'string',
-                alias: 'n',
-                description: 'the name of the customer'
-            },
+                    type: 'string',
+                    alias: 'n',
+                    description: 'the name of the customer'
+                },
 
-        })
+            })
 
-    },
-
-
-    function (args) {
+        },
 
 
+        function (args) {
+            if (args.width < 4 || args.length < 4 || args.width > 60 || args.length > 60)
 
-        console.log(args);
+                throw new RangeError('Numbers passed in must be between 4 and 60');
+
+            const houseMaterials = calcHouseMaterials(args.width, args.length, args.name, args.isFeet)
+
+            console.log(houseMaterials);
 
 
-    }
-);
+        }
+    );
 }
 yargs.help().parse();

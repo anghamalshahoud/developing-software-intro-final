@@ -1,10 +1,10 @@
 
 import yargs = require('yargs');
-import {calcHouseMaterials} from '../src/commands/calcMaterials'
-import {getHouseMaterials} from '../src/commands/getMaterials'
+import {calcMaterials} from './commands/calcMaterials'
+import {getMaterials} from './commands/getMaterials'
 
-calcHouseMaterials(yargs);
-getHouseMaterials(yargs)
+calcMaterials(yargs);
+getMaterials(yargs)
 
 yargs.help();
 yargs.parse();
