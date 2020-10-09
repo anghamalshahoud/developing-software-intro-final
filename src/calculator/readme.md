@@ -260,3 +260,26 @@ console,log(waste);
   }
 }
 ```
+
+# calcPurchase (width:number,length: number);
+
+This function will add the number of materials to the number of waste to get the correct number of supplies we need to purchase. 
+
+## Usage:
+```javascript
+// import this function
+import {calcPurchase} from './src/calculator/index'
+
+const purchase = calcPurchase(103, 103)
+
+console,log(purchase);
+
+// result:
+{
+  Purchase: {
+    lumber: { '2x4': 36, '4x4': 5 },
+    Drywall: { '4x8': 13 },
+    plywood: { '4x8': 10 }
+  }
+}
+```

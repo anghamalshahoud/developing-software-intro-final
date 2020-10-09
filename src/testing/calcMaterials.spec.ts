@@ -6,13 +6,13 @@ var assert = require('assert');
 
 
 describe("calcHouseMAterials", () => {
-    it("should return 80, 80 , Angham ", () => {
+    it("should return length, width, name, house Materials, waste, and total purchase. ", () => {
         const housewidth = 80;
         const houselength = 80;
         const name = 'Angham';
         const unit = false
         const result = calcHouseMaterials(housewidth, houselength, name, unit);
-        assert.equal(result.housewidth,result.houselength,result.name, result.Materials);
+        assert.equal(result.housewidth,result.houselength,result.name, result.Materials, result.Waste , result.purchase);
 
         it("Should throw a RangeError for a less than 48 and greter than 720", () => {
             expect(() => {

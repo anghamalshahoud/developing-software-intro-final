@@ -232,23 +232,28 @@ to see the interfaces please [read this](./src/calculator/readme.md)
 To learn how to use them with the classes please [read this](./src/houses/readme.md).
 
 # calcWallLumber(inches: number)
-This function will calculate the number of Posts, Plates, and Studs required for a single wall and it will also calculate the waste for it. [read more]((./src/calculator/readme.md)) I also created a test for this function. 
+This function will calculate the number of Posts, Plates, and Studs required for a single wall and it will also calculate the waste for it. [Read more](./src/calculator/readme.md) I also created a test for this function. 
 
 # calcDrywall(width:number, length:number)
-This function will calculate the number of drywall sheets needed for the house.[read more]((./src/calculator/readme.md)) I also created a test for this function. 
+This function will calculate the number of drywall sheets needed for the house.[[Read more](./src/calculator/readme.md) I also created a test for this function. 
 
 # calcPlywood(width:number, length:number)
-This function will calculate the number of playwood sheets needed for the house. [read more]((./src/calculator/readme.md)) I also created a test for this function. 
+This function will calculate the number of playwood sheets needed for the house. [Read more](./src/calculator/readme.md) I also created a test for this function. 
 
 # calcMaterials(width: number, length: number);
-This function will return the number of 4x4, 2x4, 4x8 drywall , and 4x8 plywood.[read more]((./src/calculator/readme.md)) I also created a test for this function. 
+This function will return the number of 4x4, 2x4, 4x8 drywall , and 4x8 plywood.[Read more](./src/calculator/readme.md) I also created a test for this function. 
 
 # Integrate calcMaterials 
-I integrated #calcMaterials function into clacHouseMaterials function so that the output of calcMaterials is included in the output of calcHouseMaterials. the usage are still the same a for the calcHouseMaterials function as will as clacMaterials function. [read more]((./src/calculator/readme.md)) I also updated the test for calcHouseMaterials function. 
+I integrated #calcMaterials function into clacHouseMaterials function so that the output of calcMaterials is included in the output of calcHouseMaterials. the usage are still the same a for the calcHouseMaterials function as will as clacMaterials function. [Read more](./src/calculator/readme.md) I also updated the test for calcHouseMaterials function. 
 
 # clacWaste (width:number,length: number);
 
-This function will give us th extra 10% of the acctual calculation for waste. [read more]((./src/calculator/readme.md)) I also created a test for this function. 
+This function will give us th extra 10% of the acctual calculation for waste. [Read more](./src/calculator/readme.md) I also created a test for this function. 
 
 # Integrate calcWaste 
-I integrated #calcWaste function into clacHouseMaterials function so that the output of calcWaste is included in the output of calcHouseMaterials. the usage are still the same a for the calcHouseMaterials function as will as clacWaste function. [read more]((./src/calculator/readme.md))  
+I integrated #calcWaste function into clacHouseMaterials function so that the output of calcWaste is included in the output of calcHouseMaterials. the usage are still the same a for the calcHouseMaterials function as will as clacWaste function. [Read more](./src/calculator/readme.md)  
+
+
+# calcPurchase (width:number,length: number);
+
+This function will add the number of materials to the number of waste to get the correct number of supplies we need to purchase. [Read more](./src/calculator/readme.md). I also created a test for this function.

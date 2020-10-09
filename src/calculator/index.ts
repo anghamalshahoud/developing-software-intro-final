@@ -5,15 +5,18 @@ export function calcHouseMaterials(width: number, length: number, name: string, 
     const housewidth = unit ? (width / 12) : width;
     const houselength = unit ? (length / 12) : length;
     const Materials = CalcMaterials(housewidth, houselength)
-    const Waste = clacWaste(housewidth,houselength)
+    const Waste = clacWaste(housewidth, houselength)
+    const purchase = calcPurchase(housewidth, houselength)
 
 
-    return { name, housewidth, houselength,
-        Materials,
-        Waste
-        
-     }
+    return {
+        name, housewidth, houselength,
+        Materials: Materials.materials,
 
+        Waste: Waste.Waste,
+        purchase: purchase.Purchase
+
+    }
 }
 
 
@@ -51,7 +54,7 @@ export function calcWallLumber(inches: number) {
     // calculate for studs
 
     const innerWallWidth = inches - (postsWidth * 2)
-    const Studs = (Math.ceil(innerWallWidth / spaceApart));
+    const Studs = (Math.ceil(innerWallWidth / spaceApart)) * 2;
 
     // top and bottom plates
 
@@ -111,10 +114,11 @@ export function CalcMaterials(width: number, length: number) {
         materials: {
             '2x4': materials.studs + materials.Plates,
             '4x4': materials.Posts,
-            dryWall:{
-            '4x8': DryWall},
+            dryWall: {
+                '4x8': DryWall
+            },
             Playwood: {
-            '4x8': Plywood
+                '4x8': Plywood
 
             }
 
@@ -126,25 +130,47 @@ export function CalcMaterials(width: number, length: number) {
 }
 
 
-export function clacWaste(length:number, width:number) {
-    const waste = CalcMaterials(width,length);
-    
+export function clacWaste(length: number, width: number) {
+    const waste = CalcMaterials(width, length);
+
     return {
-        Waste:{
-        lumber:{
-            '2x4': Math.ceil(waste.materials["2x4"] * 0.1),
-            '4x4': Math.ceil(waste.materials["4x4"] * 0.1),
-        },
-        Drywall:{
-            '4x8': Math.ceil(waste.materials.dryWall["4x8"]* 0.1)
-        },
-        Plywood:{
-            '4x8': Math.ceil(waste.materials.Playwood["4x8"] * 0.1)
+        Waste: {
+            lumber: {
+                '2x4': Math.ceil(waste.materials["2x4"] * 0.1),
+                '4x4': Math.ceil(waste.materials["4x4"] * 0.1),
+            },
+            Drywall: {
+                '4x8': Math.ceil(waste.materials.dryWall["4x8"] * 0.1)
+            },
+            Plywood: {
+                '4x8': Math.ceil(waste.materials.Playwood["4x8"] * 0.1)
+            }
+
         }
 
+
+
     }
-
-
-
 }
+
+export function calcPurchase(width: number, length: number) {
+
+    const Materials = CalcMaterials(width, length);
+    const extra = clacWaste(width, length)
+
+    return {
+        Purchase: {
+            lumber: {
+                '2x4': Materials.materials["2x4"] + extra.Waste.lumber["2x4"],
+                '4x4': Materials.materials["4x4"] + extra.Waste.lumber["4x4"]
+            },
+            Drywall: {
+                '4x8': Materials.materials.dryWall["4x8"] + extra.Waste.Drywall["4x8"],
+            },
+            plywood: {
+                '4x8': Materials.materials.Playwood["4x8"] + extra.Waste.Plywood["4x8"]
+            }
+
+        }
+    }
 }
