@@ -52,7 +52,7 @@ export class House implements IHouse {
     }
 
     get Posts(): number {
-        return (this.lumber_.posts + this._lumber.posts + this.lumber_.posts);
+        return (this.lumber_.posts + this._lumber.posts + this.lumber_.posts) + 4;
     }
 
     get ply_Wood(): number {

@@ -117,3 +117,42 @@ export interface IHouse extends CustomerName, yourHouse, house_materials { }
 
 ```
 * to read about how to use this class please [read this](../houses/readme.md) 
+
+# calcWallLumber(inches: number)
+This function will calculate the number of Posts, Plates, and Studs required for a single wall and it will also calculate the waste for it. 
+
+# Parameters
+inches:`number`;
+
+# return value
+```javascript
+Materials:{
+        Posts: requiredPosts,
+        studs:Studs,
+        Plates: plates,},
+        Waste:{
+        postsWaste: Posts_with_waste ,
+        studsWaste: Studs_with_waste,
+        platesWaste : Plates_with_waste},
+        Purchase:{
+        posts: requiredPosts + Plates_with_waste,
+        Studs: Studs + Studs_with_waste,
+        plates: plates + Plates_with_waste}
+```
+
+# Usage
+- Example 1
+```javascript
+// import this function
+import {calcWallLumber} from './src/calculator/index'
+
+const singleWallmaterials = calcWallLumber(96)
+
+console,log(singleWallmaterials);
+// result:
+{
+  Materials: { Posts: 4, studs: 6, Plates: 2 },
+  Waste: { postsWaste: 1, studsWaste: 1, platesWaste: 1 },
+  Purchase: { posts: 5, Studs: 7, plates: 3 }
+}
+```
