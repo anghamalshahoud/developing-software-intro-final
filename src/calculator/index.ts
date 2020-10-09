@@ -4,11 +4,13 @@ export function calcHouseMaterials(width: number, length: number, name: string, 
 
     const housewidth = unit ? (width / 12) : width;
     const houselength = unit ? (length / 12) : length;
-    const Materials = calcMaterials(housewidth, houselength)
+    const Materials = CalcMaterials(housewidth, houselength)
+    const Waste = clacWaste(housewidth,houselength)
 
 
     return { name, housewidth, houselength,
-        Materials
+        Materials,
+        Waste
         
      }
 
@@ -95,7 +97,7 @@ export function calcPlywood(width: number, length: number) {
     return plywood_needed
 }
 
-export function calcMaterials(width: number, length: number) {
+export function CalcMaterials(width: number, length: number) {
 
     const inches = width + length
     const materials = calcWallLumber(inches);
@@ -121,4 +123,28 @@ export function calcMaterials(width: number, length: number) {
 
 
 
+}
+
+
+export function clacWaste(length:number, width:number) {
+    const waste = CalcMaterials(width,length);
+    
+    return {
+        Waste:{
+        lumber:{
+            '2x4': Math.ceil(waste.materials["2x4"] * 0.1),
+            '4x4': Math.ceil(waste.materials["4x4"] * 0.1),
+        },
+        Drywall:{
+            '4x8': Math.ceil(waste.materials.dryWall["4x8"]* 0.1)
+        },
+        Plywood:{
+            '4x8': Math.ceil(waste.materials.Playwood["4x8"] * 0.1)
+        }
+
+    }
+
+
+
+}
 }

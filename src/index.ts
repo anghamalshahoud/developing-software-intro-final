@@ -6,11 +6,14 @@ import {getMaterials} from './commands/getMaterials'
 
 
 
+
+
 calcMaterials(yargs);
 getMaterials(yargs)
 
 yargs.help();
 yargs.parse();
+
 
 
 

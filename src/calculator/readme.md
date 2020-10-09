@@ -236,3 +236,27 @@ console,log(Materials);
 # calcHouseMaterials (width:number,length: number,name: string, unit: boolean)
 
 I integrated #calcMaterials function into this function so that the output of calcMaterials is included in the output of calcHouseMaterials. the usage are still the same a for the calcHouseMaterials function as will as clacMaterials function. 
+
+
+# clacWaste (width:number,length: number);
+
+This function will give us th extra 10% of the acctual calculation for waste. 
+
+## Usage:
+```javascript
+// import this function
+import {calcWaste} from './src/calculator/index'
+
+const waste = calcWaste(103, 103)
+
+console,log(waste);
+
+// result:
+{
+  Waste: {
+    lumber: { '2x4': 2, '4x4': 1 },
+    Drywall: { '4x8': 2 },
+    Plywood: { '4x8': 1 }
+  }
+}
+```
