@@ -235,7 +235,10 @@ To learn how to use them with the classes please [read this](./src/houses/readme
 This function will calculate the number of Posts, Plates, and Studs required for a single wall and it will also calculate the waste for it. [read more]((./src/calculator/readme.md)) I also created a test for this function. 
 
 # calcDrywall(width:number, length:number)
-This function will calculate the number of drywall sheets needed for the house.[read more]((./src/calculator/readme.md))
+This function will calculate the number of drywall sheets needed for the house.[read more]((./src/calculator/readme.md)) I also created a test for this function. 
 
 # calcPlywood(width:number, length:number)
-This function will calculate the number of playwood sheets needed for the house. [read more]((./src/calculator/readme.md))
+This function will calculate the number of playwood sheets needed for the house. [read more]((./src/calculator/readme.md)) I also created a test for this function. 
+
+# calcMaterials(width: number, length: number);
+This function will return the number of 4x4, 2x4, 4x8 drywall , and 4x8 plywood.[read more]((./src/calculator/readme.md)) I also created a test for this function. 

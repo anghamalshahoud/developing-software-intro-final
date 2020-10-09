@@ -203,3 +203,32 @@ console,log(plywoodNeeded);
 
 // result: 9
 ```
+
+# calcMaterials(width: number, length: number);
+This function will return the number of 4x4, 2x4, 4x8 drywall , and 4x8 plywood.
+
+# Parameters
+width:`number`;
+length:`number`;
+
+# Usage 
+
+```javascript
+
+// import this function
+import {calcMaterials} from './src/calculator/index'
+
+const Materials = calcMaterials(103, 103)
+
+console,log(Materials);
+
+// result: 
+{
+  materials: {
+    '2x4': 19,
+    '4x4': 4,
+    dryWall: { '4x8': 11 },
+    Playwood: { '4x8': 9 }
+  }
+}
+```

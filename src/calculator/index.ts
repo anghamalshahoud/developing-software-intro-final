@@ -1,3 +1,5 @@
+import { Func } from "mocha";
+
 export function calcHouseMaterials(width: number, length: number, name: string, unit: boolean) {
 
     const housewidth = unit ? (width / 12) : width;
@@ -26,24 +28,24 @@ const FullBoardSectionSize = FullBoardInSection * BoardLength;
 
 
 export function calcWallLumber(inches: number) {
-    
-    
-    
-   
-    
+
+
+
+
+
     // calculate for posts
 
     const wallLengthOverMinRequired = Math.max(inches - Posts_requiered_everyInches, 0);
     const wallLengthPlusPost = Posts_requiered_everyInches + postsWidth;
     const wholeNumber = Math.ceil(wallLengthOverMinRequired);
-    const isPostRequired = (Math.min(wholeNumber, 1)) ;
+    const isPostRequired = (Math.min(wholeNumber, 1));
     const requiredPosts = (Math.ceil(wallLengthOverMinRequired / wallLengthPlusPost)) + 4 + isPostRequired;
 
-    
+
     // calculate for studs
 
     const innerWallWidth = inches - (postsWidth * 2)
-    const Studs = (Math.ceil(innerWallWidth/spaceApart)) ;
+    const Studs = (Math.ceil(innerWallWidth / spaceApart));
 
     // top and bottom plates
 
@@ -53,46 +55,63 @@ export function calcWallLumber(inches: number) {
     // calc for waste
 
     const Posts_with_waste = Math.ceil(requiredPosts * 0.1);
-    const Studs_with_waste = (Math.ceil(Studs * 0.1)) ;
-    const Plates_with_waste = (Math.ceil(plates * 0.1)) ;
+    const Studs_with_waste = (Math.ceil(Studs * 0.1));
+    const Plates_with_waste = (Math.ceil(plates * 0.1));
 
 
 
-    return{
-        
-        
-        
-        Materials:{
+    return {
+
+
+
+
         Posts: requiredPosts,
-        studs:Studs,
-        Plates: plates,},
-        Waste:{
-        postsWaste: Posts_with_waste ,
-        studsWaste: Studs_with_waste,
-        platesWaste : Plates_with_waste},
-        Purchase:{
-        posts: requiredPosts + Plates_with_waste,
-        Studs: Studs + Studs_with_waste,
-        plates: plates + Plates_with_waste}
+        studs: Studs,
+        Plates: plates,
 
-       
-        
+
+
     }
 
 }
 
 
-export function calcDrywall(width:number, length:number){
+export function calcDrywall(width: number, length: number) {
     // width and length here are in feet
-    const wall1_4 = Math.floor((width /12) * (length/12)) * 4
-    const ceilingAreainFeet = Math.floor((width/12) * (length/12 ))
-    const drywall = Math.floor((wall1_4 + ceilingAreainFeet) / DryWall) ;
+    const wall1_4 = Math.floor((width / 12) * (length / 12)) * 4
+    const ceilingAreainFeet = Math.floor((width / 12) * (length / 12))
+    const drywall = Math.floor((wall1_4 + ceilingAreainFeet) / DryWall);
     return drywall
-    
+
 }
 
-export function calcPlywood(width:number, length:number){
+export function calcPlywood(width: number, length: number) {
     // width and length here are in feet
-    const plywood_needed = (Math.ceil(((width/12) * (length/12)) / plyWood)) * 3;
+    const plywood_needed = (Math.ceil(((width / 12) * (length / 12)) / plyWood)) * 3;
     return plywood_needed
+}
+
+export function calcMaterials(width: number, length: number) {
+
+    const inches = width + length
+    const materials = calcWallLumber(inches);
+    const DryWall = calcDrywall(width, length);
+    const Plywood = calcPlywood(width, length)
+
+    return {
+        materials: {
+            '2x4': materials.studs + materials.Plates,
+            '4x4': materials.Posts,
+            dryWall:{
+            '4x8': DryWall,},
+            Playwood: {
+            '4x8': Plywood
+
+            }
+
+        }
+    }
+
+
+
 }
