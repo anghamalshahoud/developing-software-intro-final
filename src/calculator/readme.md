@@ -156,3 +156,27 @@ console,log(singleWallmaterials);
   Purchase: { posts: 5, Studs: 7, plates: 3 }
 }
 ```
+
+# calcDrywall(width:number, length:number)
+This function will calculate the number of drywall sheets needed for the house. 
+
+# Parameters
+width:`number`;
+length:`number`;
+
+# return value
+the number of dryWall needed.
+
+# Usage 
+
+```javascript
+
+// import this function
+import {calcDrywall} from './src/calculator/index'
+
+const drywallNeeded = calcDrywall(96, 96)
+
+console,log(drywallNeeded);
+
+// result: 10
+```

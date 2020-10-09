@@ -234,3 +234,5 @@ To learn how to use them with the classes please [read this](./src/houses/readme
 # calcWallLumber(inches: number)
 This function will calculate the number of Posts, Plates, and Studs required for a single wall and it will also calculate the waste for it. [read more]((./src/calculator/readme.md)) I also created a test for this function. 
 
+# calcDrywall(width:number, length:number)
+This function will calculate the number of drywall sheets needed for the house.[read more]((./src/calculator/readme.md))

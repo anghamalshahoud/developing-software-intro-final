@@ -17,6 +17,7 @@ export const getHouseMaterials = (name: string) => {
 const postsWidth = 3.5;
 const BoardLength = 8 * 12;
 const spaceApart = 16;
+const DryWall = 32;
 
 // Posts are required every 20 feet at minimum
 const Posts_requiered_everyInches = 20 * 12;
@@ -78,4 +79,13 @@ export function calcWallLumber(inches: number) {
         
     }
 
+}
+
+
+export function calcDrywall(width:number, length:number){
+    const wall1_4 = Math.floor((width /12) * (length/12)) * 4
+    const ceilingAreainFeet = Math.floor((width/12) * (length/12 ))
+    const drywall = Math.floor((wall1_4 + ceilingAreainFeet) / DryWall) ;
+    return drywall
+    
 }
