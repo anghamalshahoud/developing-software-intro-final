@@ -180,3 +180,26 @@ console,log(drywallNeeded);
 
 // result: 10
 ```
+# calcPlywood(width:number, length:number)
+This function will calculate the number of playwood sheets needed for the house. 
+
+# Parameters
+width:`number`;
+length:`number`;
+
+# return value
+the number of playwood needed.
+
+# Usage 
+
+```javascript
+
+// import this function
+import {calcPlywood} from './src/calculator/index'
+
+const plywoodNeeded = calcPlywood(103, 103)
+
+console,log(plywoodNeeded);
+
+// result: 9
+```

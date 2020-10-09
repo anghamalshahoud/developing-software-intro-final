@@ -236,3 +236,6 @@ This function will calculate the number of Posts, Plates, and Studs required for
 
 # calcDrywall(width:number, length:number)
 This function will calculate the number of drywall sheets needed for the house.[read more]((./src/calculator/readme.md))
+
+# calcPlywood(width:number, length:number)
+This function will calculate the number of playwood sheets needed for the house. [read more]((./src/calculator/readme.md))

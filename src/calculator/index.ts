@@ -18,7 +18,7 @@ const postsWidth = 3.5;
 const BoardLength = 8 * 12;
 const spaceApart = 16;
 const DryWall = 32;
-
+const plyWood = 32
 // Posts are required every 20 feet at minimum
 const Posts_requiered_everyInches = 20 * 12;
 const FullBoardInSection = Math.floor(Posts_requiered_everyInches / BoardLength);
@@ -83,9 +83,16 @@ export function calcWallLumber(inches: number) {
 
 
 export function calcDrywall(width:number, length:number){
+    // width and length here are in feet
     const wall1_4 = Math.floor((width /12) * (length/12)) * 4
     const ceilingAreainFeet = Math.floor((width/12) * (length/12 ))
     const drywall = Math.floor((wall1_4 + ceilingAreainFeet) / DryWall) ;
     return drywall
     
+}
+
+export function calcPlywood(width:number, length:number){
+    // width and length here are in feet
+    const plywood_needed = (Math.ceil(((width/12) * (length/12)) / plyWood)) * 3;
+    return plywood_needed
 }

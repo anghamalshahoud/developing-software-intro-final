@@ -1,7 +1,6 @@
 import { expect } from "chai";
 import "mocha";
 import { calcDrywall } from "../calculator/index";
-var assert = require('assert');
 
 
 
