@@ -1,5 +1,6 @@
 import { number, ToString } from "yargs";
 import { calcHouseMaterials } from '../calculator/index'
+var fs = require("fs");
 
 export interface CustomerName {
     name: string;
@@ -14,6 +15,7 @@ export interface yourHouse {
 
 }
 
+export interface IHouseProperties extends CustomerName, yourHouse{}
 
 
 export interface house_materials {
@@ -33,4 +35,8 @@ export interface house_materials {
 
 
 export interface IHouse extends CustomerName, yourHouse, house_materials { }
+
+
+
+
 

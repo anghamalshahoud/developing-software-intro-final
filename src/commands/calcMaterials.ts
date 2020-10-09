@@ -1,8 +1,7 @@
 import yargs = require('yargs');
 import { Arguments, Argv, string } from "yargs";
-import { calcHouseMaterials } from '../calculator';
-import { Houses } from '../houses/houses'
-
+import { calcHouseMaterials, calcWallLumber } from '../calculator';
+var fs = require("fs");
 
 
 
@@ -55,18 +54,16 @@ export function calcMaterials(yargs: Argv): void {
             const houseMaterials = calcHouseMaterials(args.width, args.length, args.name, args.isFeet)
 
 
-            const house = Houses.create(args.name)
-            house.name = houseMaterials.name
-            house.width = houseMaterials.housewidth
-            house.length = houseMaterials.houselength
+           console.log(houseMaterials);
 
 
 
 
-            console.log(house);
+            console.log();
 
 
         }
     );
 }
 yargs.help().parse();
+

@@ -116,7 +116,7 @@ export interface house_materials {
 export interface IHouse extends CustomerName, yourHouse, house_materials { }
 
 ```
-* to read about how to use this class please [read this](../houses/readme.md) 
+ 
 
 # calcWallLumber(inches: number)
 This function will calculate the number of Posts, Plates, and Studs required for a single wall and it will also calculate the waste for it. 

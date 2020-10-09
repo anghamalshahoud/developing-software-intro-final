@@ -1,7 +1,6 @@
 import yargs = require("yargs");
 import { Arguments, Argv, string } from "yargs";
 import { getHouseMaterials } from '../calculator/index';
-import { Houses } from '../houses/houses'
 
 
 
@@ -26,11 +25,9 @@ export function getMaterials(yargs: Argv): void {
 
             const getCustomer = getHouseMaterials(args.name)
 
-            const house = Houses.create(args.name)
-            house.name = args.name
 
 
-            console.log(house);
+            console.log(getCustomer);
         }
     );
 }

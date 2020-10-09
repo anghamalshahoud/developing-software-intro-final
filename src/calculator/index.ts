@@ -4,13 +4,21 @@ export function calcHouseMaterials(width: number, length: number, name: string, 
 
     const housewidth = unit ? (width / 12) : width;
     const houselength = unit ? (length / 12) : length;
+    // outside area
+    const outsideWallArea = ((housewidth * 2) + (houselength * 2)) * (houselength - (postsWidth * 2))
+    // inside area
+    const insideWallArea = ((housewidth - (postsWidth * 2)) * (houselength - (postsWidth * 2))) * 4;
+
+    // ceiling area
+    const ceilingArea = (housewidth - (postsWidth * 2)) * (houselength - (postsWidth * 2))
+
     const Materials = CalcMaterials(housewidth, houselength)
     const Waste = clacWaste(housewidth, houselength)
     const purchase = calcPurchase(housewidth, houselength)
 
 
     return {
-        name, housewidth, houselength,
+        name, housewidth, houselength, outsideWallArea, insideWallArea, ceilingArea,
         Materials: Materials.materials,
 
         Waste: Waste.Waste,
@@ -66,6 +74,7 @@ export function calcWallLumber(inches: number) {
     const Posts_with_waste = Math.ceil(requiredPosts * 0.1);
     const Studs_with_waste = (Math.ceil(Studs * 0.1));
     const Plates_with_waste = (Math.ceil(plates * 0.1));
+    
 
 
 
