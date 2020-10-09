@@ -232,3 +232,7 @@ console,log(Materials);
   }
 }
 ```
+
+# calcHouseMaterials (width:number,length: number,name: string, unit: boolean)
+
+I integrated #calcMaterials function into this function so that the output of calcMaterials is included in the output of calcHouseMaterials. the usage are still the same a for the calcHouseMaterials function as will as clacMaterials function. 

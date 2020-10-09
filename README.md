@@ -242,3 +242,6 @@ This function will calculate the number of playwood sheets needed for the house.
 
 # calcMaterials(width: number, length: number);
 This function will return the number of 4x4, 2x4, 4x8 drywall , and 4x8 plywood.[read more]((./src/calculator/readme.md)) I also created a test for this function. 
+
+# Integrate calcMaterials 
+I integrated #calcMaterials function into this function so that the output of calcMaterials is included in the output of calcHouseMaterials. the usage are still the same a for the calcHouseMaterials function as will as clacMaterials function. [read more]((./src/calculator/readme.md)) I also updated the test for calcHouseMaterials function. 

@@ -4,9 +4,13 @@ export function calcHouseMaterials(width: number, length: number, name: string, 
 
     const housewidth = unit ? (width / 12) : width;
     const houselength = unit ? (length / 12) : length;
+    const Materials = calcMaterials(housewidth, houselength)
 
 
-    return { name, housewidth, houselength }
+    return { name, housewidth, houselength,
+        Materials
+        
+     }
 
 }
 
@@ -95,15 +99,18 @@ export function calcMaterials(width: number, length: number) {
 
     const inches = width + length
     const materials = calcWallLumber(inches);
-    const DryWall = calcDrywall(width, length);
-    const Plywood = calcPlywood(width, length)
+    const housewidth = width
+    const houselength = length
+
+    const DryWall = calcDrywall(housewidth, housewidth);
+    const Plywood = calcPlywood(housewidth, houselength)
 
     return {
         materials: {
             '2x4': materials.studs + materials.Plates,
             '4x4': materials.Posts,
             dryWall:{
-            '4x8': DryWall,},
+            '4x8': DryWall},
             Playwood: {
             '4x8': Plywood
 
