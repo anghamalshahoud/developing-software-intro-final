@@ -85,3 +85,35 @@ npm start -- get-house-materials -n angham
 // results:
 { name: 'angham' }
 ```
+
+# interfaces 
+
+I created new interfaces for calcHouseMaterials and getHouseMaterials functions.I extendes these interfacses into a class to help get the outcome requirments in order :
+```javascript
+export interface CustomerName {
+    name: string;
+
+}
+ export interface yourHouse {
+    width: number;
+    length: number;
+    outsideWallArea: number;
+    insideWallArea: number;
+    ceilingArea: number;
+
+}
+export interface house_materials {
+
+    studs: number;
+    posts: number;
+    plyWood: number;
+    dryWall: number
+
+
+}
+
+
+export interface IHouse extends CustomerName, yourHouse, house_materials { }
+
+```
+* to read about how to use this class please [read this](../houses/readme.md) 

@@ -1,6 +1,6 @@
 {
   "name": "acsd-final-angham",
-  "version": "1.8.0",
+  "version": "1.9.0",
   "description": "This respository is intended for the use of Focus College Students enrolled in the Advanced Certificate of Software Development located in Kelowna, BC and Surrey, BC.",
   "main": "index.js",
   "scripts": {
@@ -13,7 +13,7 @@
     "lint:fix": "eslint ./src/ --ext .ts --fix ",
     "prettier:fix": "prettier --write src/**/*.ts",
     "compile": "tsc",
-    "test": "mocha -r ts-node/register src/**/*.spec.ts",
+    "test": "mocha -r ts-node/register src/testing/*.spec.ts",
     "coverage": "nyc npm run test"
   },
   "repository": {
@@ -33,6 +33,7 @@
     "@istanbuljs/nyc-config-typescript": "^1.0.1",
     "@types/chai": "^4.2.13",
     "@types/mocha": "^8.0.3",
+    "@types/node": "^14.11.5",
     "@types/yargs": "^15.0.7",
     "@typescript-eslint/eslint-plugin": "^4.3.0",
     "@typescript-eslint/parser": "^4.3.0",

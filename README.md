@@ -206,11 +206,28 @@ npm start -- get-house-materials -n angham
 
 # Calculator
 ---
-## calcHouseMaterials (width: number, length: number, name: string, unit: boolean)
+
+# calcHouseMaterials (width: number, length: number, name: string, unit: boolean)
 - This function will check if the width and length are in inches and if not it will convert the unit from feet into inches and will also return the customer name. 
-Note: The width and the length should be between 4 and 60 otherwise the program will through a RangeError. [Read more](./src/calculator/readme.md)
+Note: The width and the length should be between 4 and 60 otherwise the program will through a RangeError. [Read more](./src/calculator/readme.md).
 
-## getHouseMaterials (name:string)
+# getHouseMaterials (name:string)
 
--  This function will be used to call an existing house [Read more](./src/calculator/readme.md)
+-  This function will be used to call an existing house [Read more](./src/calculator/readme.md).
+
+# Functions tests
+I created two tests for each of calcHouseMaterials and getHouseMaterials functions
+- To run these tests use:
+```
+npm run test
+```
+- To run these tests with coverage use:
+```
+npm run coverage
+```
+
+# classes and interfaces
+- To help getting the requierd outcome in an orgnized way.
+to see the interfaces please [read this](./src/calculator/readme.md)
+To learn how to use them with the classes please [read this](./src/houses/readme.md).
 
